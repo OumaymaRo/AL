@@ -17,7 +17,6 @@ public class FicheSalaire
     @Override
     public String toString() {
         return "FicheSalaire{" +
-                "numFiche=" + numFiche +
                 ", dateFiche=" + dateFiche +
                 ", nbHeures=" + nbHeures +
                 ", tauxHoraire=" + tauxHoraire +

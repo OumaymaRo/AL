@@ -1,5 +1,6 @@
 package MODELS;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -9,7 +10,19 @@ public class Employee {
     private String nom;
     private String prenom;
     private List<FicheSalaire> listeFichesSalaire;
-
+    public Employee(String matricule) {
+        this.matricule = matricule;
+        this.nom = null;
+        this.prenom = null;
+        this.adresse = null;
+    }
+    public Employee(String matricule, String nom, String prenom, String adresse) {
+        this.matricule = matricule;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.listeFichesSalaire = new ArrayList<>();  // Liste vide par défaut
+    }
 
     public Employee() {
         this.matricule = "matricule";

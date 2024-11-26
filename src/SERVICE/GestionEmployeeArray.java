@@ -59,8 +59,16 @@ public class GestionEmployeeArray implements InterfaceEmployee {
 
     @Override
     public List<Employee> AfficherListeEmployee() {
-        return List.of();
+        if (Employees.isEmpty()) {
+            System.out.println("Aucun employé dans la liste.");
+        } else {
+            for (Employee emp : Employees) {
+                System.out.println(emp);  // Utilise la méthode `toString` d'Employee pour afficher les infos
+            }
+        }
+        return Employees;
     }
+
 }
 
 
