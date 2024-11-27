@@ -1,15 +1,18 @@
 package IHM;
 
+import Interfaces.InterfaceSalaire;
+
 import Interfaces.InterfaceIHMficheSalaire;
-import SERVICE.GestionFicheSalaireArray;
 import MODELS.FicheSalaire;
-import MODELS.Employee;
+import SERVICE.GestionFicheSalaireArray;
+import SERVICE.GestionFicheSalaireJDBC;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class IHMFicheSalaireConsole implements InterfaceIHMficheSalaire {
-    private GestionFicheSalaireArray gestionFicheSalaire = new GestionFicheSalaireArray(); // Instance de gestion des fiches de salaire
+    private InterfaceSalaire gestionFicheSalaire = new GestionFicheSalaireJDBC();
     private Scanner scanner = new Scanner(System.in);
 
     @Override
@@ -112,19 +115,21 @@ public class IHMFicheSalaireConsole implements InterfaceIHMficheSalaire {
             System.out.println("Aucune fiche de salaire trouvée pour le matricule : " + matricule);
         }
     }
-
     @Override
     public void afficherTousSalaires() {
-        // Récupérer la liste des fiches de salaire
-        ArrayList<FicheSalaire> fiches = gestionFicheSalaire.getFichesSalaires();
+        // Utiliser le getter pour obtenir la liste des fiches de salaire
+        List<FicheSalaire> fiches = gestionFicheSalaire.getFichesSalaires
+                (); // Utilisation du getter
 
         // Afficher chaque fiche de salaire
         if (fiches.isEmpty()) {
             System.out.println("Aucune fiche de salaire disponible.");
         } else {
             for (FicheSalaire fiche : fiches) {
-                System.out.println(fiche); // Vous pouvez définir un `toString` personnalisé dans FicheSalaire
+                System.out.println(fiche); // Assurez-vous que FicheSalaire a une méthode toString() personnalisée
             }
         }
     }
+
+
 }

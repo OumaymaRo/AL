@@ -4,11 +4,13 @@ import Interfaces.InterfaceEmployee;
 import Interfaces.InterfaceIHMemployee;
 import MODELS.Employee;
 import SERVICE.GestionEmployeeArray;
+import SERVICE.GestionEmployeeJDBC;
+
 
 import java.util.Scanner;
 
 public class IHMemployeeConsole implements InterfaceIHMemployee {
-    private InterfaceEmployee gestionEmployee = new GestionEmployeeArray();  // Correction du type
+    private InterfaceEmployee gestionEmployee = new GestionEmployeeJDBC();  // Correction du type
 
     public IHMemployeeConsole() {
     }

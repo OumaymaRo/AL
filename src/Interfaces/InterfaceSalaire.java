@@ -1,5 +1,9 @@
 package Interfaces;
 
+import MODELS.FicheSalaire;
+
+import java.util.ArrayList;
+
 public interface InterfaceSalaire {
     // Calcul des montants de salaire
     double CalculerMontantBrut(int nb, double tauxH);
@@ -22,4 +26,6 @@ public interface InterfaceSalaire {
 
     // Supprimer le salaire d'un employé
     boolean supprimerSalaire(String matricule);
-}
+     ArrayList<FicheSalaire> getFichesSalaires() ;
+
+    }
